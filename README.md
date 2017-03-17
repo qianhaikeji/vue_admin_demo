@@ -4,11 +4,11 @@
 
 ```
 # 安装
-npm install
+yarn install
 # 调试
-npm run dev
+yarn run dev
 # 打包
-npm run build
+yarn run build
 ```
 
 ## 代码结构
