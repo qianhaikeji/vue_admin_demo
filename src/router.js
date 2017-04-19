@@ -138,28 +138,29 @@ const routers = new VueRouter({
 })
 
 routers.beforeEach((to, from, next) => {
-  let logined = store.state.auth.logined
-  if (!logined) {
-    store.dispatch('reloadAuth').then(() => {
-      logined = store.state.auth.logined
+  // let logined = store.state.auth.logined
+  // if (!logined) {
+  //   store.dispatch('reloadAuth').then(() => {
+  //     logined = store.state.auth.logined
 
-      if (!logined && to.name !== 'login') {
-        next({name: 'login'})
-        return
-      }
+  //     if (!logined && to.name !== 'login') {
+  //       next({name: 'login'})
+  //       return
+  //     }
 
-      if (logined && to.name === 'login') {
-        next({name: 'home'})
-        return
-      }
+  //     if (logined && to.name === 'login') {
+  //       next({name: 'home'})
+  //       return
+  //     }
 
-      next()
-    })
+  //     next()
+  //   })
 
-    next(false)
-  } else {
-    next()
-  }
+  //   next(false)
+  // } else {
+  //   next()
+  // }
+  next()
 })
 
 routers.afterEach(router => {
